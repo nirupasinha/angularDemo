@@ -51,9 +51,7 @@ export class AddComponent implements OnDestroy {
   save() {
     console.log("save", this.addName);
     console.log("save person", this.person);
-    console.log("save person", Person);
-    this.person=Person(this.id, this.addName, this.addPhone, this.addAddress);
-    
+    this.person= new Person(this);
     this.person.name = this.addName;
     this.person.phone = this.addPhone;
     this.person.address = this.addAddress;
