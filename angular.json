@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-demo"
+    }
+  },
+  "defaultProject": "ng-demo",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   query: string;
   searchResults: Array<Person>;
   sub: Subscription;
+  
 
   constructor(private searchService: SearchService, private route: ActivatedRoute) { }
 
@@ -31,6 +32,12 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   search(): void {
+    this.searchService.search(this.query).subscribe(
+      (data: any) => { this.searchResults = data; },
+      error => console.log(error)
+    );
+  }
+  add():void{
     this.searchService.search(this.query).subscribe(
       (data: any) => { this.searchResults = data; },
       error => console.log(error)

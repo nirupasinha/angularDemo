@@ -48,6 +48,8 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   save() {
+    console.log(this);
+    
     this.person.name = this.editName;
     this.person.phone = this.editPhone;
     this.person.address = this.editAddress;

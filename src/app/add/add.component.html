@@ -1,0 +1,25 @@
+<h1>add page</h1>
+<form (ngSubmit)="save()" #addForm="ngForm">
+    <div>
+        <label>PERSON Id:</label>
+        <input [(ngModel)]="id" name="id" id="id" placeholder="enter id" />
+    </div>
+    <div>
+        <label>Name:</label>
+        <input [(ngModel)]="addName" name="name" id="name" placeholder="name" required #name="ngModel" />
+    </div>
+    <div>
+        <label>Phone:</label>
+        <input [(ngModel)]="addPhone" name="phone" id="phone" placeholder="Phone" />
+    </div>
+    <fieldset>
+        <legend>Address:</legend>
+        <address>
+            <input [(ngModel)]="addAddress.street" id="street" name="street"><br />
+            <input [(ngModel)]="addAddress.city" id="city" name="city">,
+            <input [(ngModel)]="addAddress.state" id="state" name="state" size="2">
+            <input [(ngModel)]="addAddress.zip" id="zip" name="zip" size="5">
+        </address>
+    </fieldset>
+    <button type="submit" id="save" [disabled]="!addForm.form.valid">Save</button>
+</form>
