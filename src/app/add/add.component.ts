@@ -11,6 +11,10 @@ export class AddComponent implements OnDestroy {
   person: Person;
   id:Number;
   addName: string;
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
   addPhone: string;
   addAddress: Address;
 
@@ -49,12 +53,13 @@ export class AddComponent implements OnDestroy {
 
 
   save() {
-    console.log("save", this.addName);
+    console.log("save", this);
     console.log("save person", this.person);
     this.person= new Person(this);
+    this.addAddress = new Address(this)
     this.person.name = this.addName;
     this.person.phone = this.addPhone;
-    this.person.address = this.addAddress;
+    this.person.address =  this.addAddress;
     this.service.save(this.person);
     console.log("person", this.person);
     
